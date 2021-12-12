@@ -5,16 +5,16 @@ using System.Windows.Controls;
 namespace Calculator
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Interaction logic for CommonFractionsWindow.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class CommonFractionsWindow : Window
 	{
 		string leftOperand = "";
 		string operation = "";
 		string rightOperand = "";
-		CommonFractionsWindow commonFractionsWindow;
+		MainWindow mainWindow;
 
-		public MainWindow()
+		public CommonFractionsWindow()
 		{
 			InitializeComponent();
 			ButtonsHandler();
@@ -42,7 +42,7 @@ namespace Calculator
 				if (operation == "")
 				{
 					leftOperand += calcInput;
-				} 
+				}
 				else rightOperand += calcInput;
 			}
 			else
@@ -81,10 +81,10 @@ namespace Calculator
 			}
 		}
 
-		private void SwitchToCommonFractionsWindow(object sender, RoutedEventArgs routedEventArgs)
+		private void SwitchToCommonCalculator(object sender, RoutedEventArgs routedEventArgs)
 		{
-			commonFractionsWindow = new CommonFractionsWindow(); 
-			commonFractionsWindow.Show();
+			mainWindow = new MainWindow();
+			mainWindow.Show();
 			this.Close();
 		}
 
@@ -108,6 +108,6 @@ namespace Calculator
 					rightOperand = (num1 / num2).ToString();
 					break;
 			}
-		} 
+		}
 	}
 }
