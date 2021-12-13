@@ -54,6 +54,11 @@ namespace Calculator
 						textBlock.Text = "";
 						textBlock.Text += "You can't divide by 0";
 					}
+					else if (operation == "√" && leftOperand == "0")
+					{
+						textBlock.Text = "";
+						textBlock.Text += "You can't have 0 root";
+					}
 					else
 					{
 						UpdateRightOperand();
@@ -107,6 +112,18 @@ namespace Calculator
 				case "/":
 					rightOperand = (num1 / num2).ToString();
 					break;
+				case "^":
+					rightOperand = Math.Pow(num1, num2).ToString();
+					break;
+				case "√":
+					rightOperand = Math.Pow(num2, 1/num1).ToString();
+					break;
+				//case "+/-":
+				//	rightOperand = (num1 * (-1)).ToString();
+				//	break;
+				//case ",":
+				//	rightOperand = (num1 * (-1)).ToString();
+				//	break;
 			}
 		} 
 	}
